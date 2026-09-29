@@ -9,6 +9,62 @@
 #include "utilerias.h"
 
 int main() {
+// Variables (siempre inicializadas)
+    int opcion = 0;
+    double a = 0.0;
+    double b = 0.0;
+    double resultado = 0.0;
+    char simbolo = ' ';
+
+    // Paso 1 y 2: título y menú
+    std::cout << "Calculadora básica" << std::endl;
+    std::cout << "1) Suma" << std::endl;
+    std::cout << "2) Resta" << std::endl;
+    std::cout << "3) Multiplicación" << std::endl;
+    std::cout << "4) División" << std::endl;
+
+    // Paso 3: leer la opción con leerEntero y repetir si no está entre 1 y 4
+    do {
+        opcion = leerEntero("Elige una opción (1-4): ");
+    } while (opcion < 1 || opcion > 4);
+
+    // Pasos 4 y 5: leer los dos números con leerDecimal
+    a = leerDecimal("Ingresa el primer número: ");
+    b = leerDecimal("Ingresa el segundo número: ");
+
+    // Paso 6: SOLO si la opción es división, ¿qué haces si b es 0?
+    if (opcion == 4 && b == 0) {
+        std::cout << "Error: no se puede dividir entre cero." << std::endl;
+        return 1;
+    }
+
+    // Paso 7: decisión múltiple
+    switch (opcion) {
+        case 1:
+            resultado = a + b;
+            simbolo = '+';
+            break;
+        case 2:
+            resultado = a - b;
+            simbolo = '-';
+            break;
+        case 3:
+            resultado = a * b;
+            simbolo = '*';
+            break;
+        case 4:
+            resultado = a / b;
+            simbolo = '/';
+            break;
+        default:
+            std::cout << "Opción inválida." << std::endl;
+            return 1;
+    }
+
+    // Paso 8: salida -> a simbolo b = resultado
+    std::cout << a << " " << simbolo << " " << b << " = " << resultado << std::endl;
+
+
     // Variables (siempre inicializadas)
     // TODO: opcion, a, b, resultado y simbolo.
     //       ¿De qué tipo es cada una? Revisa la sección 2 de tu README.

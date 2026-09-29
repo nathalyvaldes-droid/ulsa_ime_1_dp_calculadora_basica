@@ -55,6 +55,10 @@ g++ -Wall -Wextra -std=c++17 main.cpp -o calculadora
 
 ## 7. Ejemplo de ejecución (Fase 3)
 <!-- Pega aquí lo que muestra tu programa en pantalla con una división donde primero escribes 0 como segundo número. -->
+Elige una opción (1-4): 4
+Ingresa el primer número: 3
+Ingresa el segundo número: 0
+Error: no se puede dividir entre cero.
 
 ```
 _____
@@ -73,48 +77,48 @@ _____
 | 8. Mostrar el resultado | _____ |
 
 **¿Hubo algún paso de la receta que te costó traducir a C++? ¿Cuál y por qué?**
-_____
+SIII todos porque de plano no le entendia pero ya la final empece a usar bien lo del switch y asi 
 
 ## 9. Experimentos (Fase 3)
 
 **Experimento A: sin el `break` del `case 1`, ¿qué mostró el programa con 8 + 5? ¿Qué te dijo el compilador? ¿Por qué pasó?**
-_____
+ala se paso al simbolo de abajo en donde decia el break osea lo empece con suma y como no tenia la palabra break se sumo y se resto porque no tenia algo que le dijera que pare
 
 **Experimento B: sin la validación del Paso 6, ¿qué mostró el programa con 5 / 0? ¿Tiene sentido?**
-_____
+muestra error no se puede dividir entre cero 
 
 **Experimento C (opcional): con `a` y `b` de tipo `int`, ¿qué resultado dio 7 / 2? ¿Te avisó el compilador?**
-_____
+no 
 
 ## 10. Tabla de pruebas (Fase 4)
 
 | Caso | Entradas (opción, a, b) | Esperado | Obtenido | ¿Pasó? |
 |---|---|---|---|---|
-| Suma | 1, 8, 5 | 8 + 5 = 13 | _____ | _____ |
-| Resta negativa | 2, 3, 5 | 3 - 5 = -2 | _____ | _____ |
-| Multiplicación con decimales | 3, 2.5, 4 | 2.5 * 4 = 10 | _____ | _____ |
-| Multiplicación con negativo | 3, -3, 4 | -3 * 4 = -12 | _____ | _____ |
-| División | 4, 7, 2 | 7 / 2 = 3.5 | _____ | _____ |
-| Dividendo cero | 4, 0, 5 | 0 / 5 = 0 | _____ | _____ |
+| Suma | 1, 8, 5 | 8 + 5 = 13 | si | _____ |
+| Resta negativa | 2, 3, 5 | 3 - 5 = -2 | si salio | _____ |
+| Multiplicación con decimales | 3, 2.5, 4 | 2.5 * 4 = 10 | no salio porque no acepta numeros decimales  | _____ |
+| Multiplicación con negativo | 3, -3, 4 | -3 * 4 = -12 | si salio | _____ |
+| División | 4, 7, 2 | 7 / 2 = 3.5 | si salio | _____ |
+| Dividendo cero | 4, 0, 5 | 0 / 5 = 0 | si sale| _____ |
 | Divisor cero | 4, 5, 0 (luego 2) | vuelve a pedir `b`; 5 / 2 = 2.5 | _____ | _____ |
-| Suma con cero | 1, 5, 0 | 5 + 0 = 5 (**no** vuelve a pedir `b`) | _____ | _____ |
-| Opción fuera de rango | 5 (luego 1), 8, 5 | vuelve a pedir la opción; 8 + 5 = 13 | _____ | _____ |
+| Suma con cero | 1, 5, 0 | 5 + 0 = 5 (**no** vuelve a pedir `b`) | sale error | _____ |
+| Opción fuera de rango | 5 (luego 1), 8, 5 | vuelve a pedir la opción; 8 + 5 = 13 | me volvio a salir al opcion de elige un numero y lgo ya hizo bien la suma | _____ |
 | Opción cero | 0 (luego 1), 8, 5 | vuelve a pedir la opción; 8 + 5 = 13 | _____ | _____ |
-| Opción decimal | 2.5 (luego 2), 3, 5 | `leerEntero` vuelve a pedir; 3 - 5 = -2 | _____ | _____ |
-| Opción con texto | `suma` (luego 1), 8, 5 | `leerEntero` vuelve a pedir; 8 + 5 = 13 | _____ | _____ |
-| Número con texto | 1, `abc` (luego 8), 5 | `leerDecimal` vuelve a pedir; 8 + 5 = 13 | _____ | _____ |
-| Caso propio 1 | _____ | _____ | _____ | _____ |
-| Caso propio 2 | _____ | _____ | _____ | _____ |
+| Opción decimal | 2.5 (luego 2), 3, 5 | `leerEntero` vuelve a pedir; 3 - 5 = -2 | me sale que tengo que escribir un numero entero y luego ya me salip bien la resta| _____ |
+| Opción con texto | `suma` (luego 1), 8, 5 | `leerEntero` vuelve a pedir; 8 + 5 = 13 | me dice que escoga un aopcion valida | _____ |
+| Número con texto | 1, `abc` (luego 8), 5 | `leerDecimal` vuelve a pedir; 8 + 5 = 13 | me decia que pusiera un numero valido hasta que puse uno de las de opcion y la suma si la realizo correctamente | _____ |
+| Caso propio 1 | 3) multiplicacion | 7*6 = 42 | _____ | _____ |
+| Caso propio 2 | 2) Resta | 10-2= 8 | _____ | _____ |
 
 ## 11. Bitácora de mejoras (Fase 4)
 
-| # | ¿Qué falló o qué quise mejorar? | ¿Qué cambié? | ¿Funcionó? |
-|---|---|---|---|
+| # | ¿Qué falló o qué quise mejorar? el codigo  | ¿Qué cambié? el codigo y la manera en la que lo redacte| ¿Funcionó? sii|
+el codigo como mil veces porq se me olvidaba ponerle ; 
 | 1 | _____ | _____ | _____ |
 | 2 | _____ | _____ | _____ |
 
 **¿Encontré algo que la receta no contemplaba? ¿Qué?**
-_____
+no, literal lei toda la receta y con eso pude saber que tenia que hacer
 
 **Reto elegido (opcional):** _____
 
@@ -127,22 +131,22 @@ _____
 ## 13. Reflexión final
 
 **¿Qué aprendí con esta práctica?**
-_____
+aprendi a poner atencion a las cosas que pienso que no me van a ayudar
 
 **Ahora que terminé, ¿qué cambiaría de mi proceso?**
-_____
+hubiera puesto mas atencion antes y buscado los significados de std switch y asi 
 
 **¿Qué fue lo más difícil y cómo lo resolví?**
-_____
+lo mas dificil fue redactarlo y lo resolvi leyendo la receta y preguntando como empezar a escribir el codigo ya que no tenia ni idea de como se escribia 
 
 **¿Qué pregunta me quedó sin responder?**
-_____
+ninguna
 
 **¿Fue más fácil programar a partir de una receta ajena que de la mía? ¿Por qué?**
-_____
+mm sii porque la verdad mis recetas eran muy resumidas y no les entendia muy bien 
 
 **Si yo hubiera diseñado la receta, ¿qué le cambiaría?**
-_____
+nada se entiende super bien 
 
 ## 14. Lista de verificación antes de entregar (Fase 5)
 
